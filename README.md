@@ -181,3 +181,37 @@ db.engine.execute(query, id=post_id)
 
 #
 
+## ORMs
+
+ORMs, or object-relational-mappers are an easier and more modern way
+of using databases.  SQLAlchemy is an ORM, apart from a library for
+accessing SQL databases from python.
+
+What we do in ORMs is map the entities (tables) in our DB to classes
+(**models**) in our application.
+
+## models
+
+We create models as simple python classes, that extend from
+`db.Model`.
+
+``` python
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(80), unique=True, nullable=False)
+    email = db.Column(db.String(120), unique=True, nullable=False)
+
+    def __repr__(self):
+        return '<User %r>' % self.username
+```
+
+## Example 3
+
+see `example3` folder
+
+## Recap
+
+**ORMs** are normally the way to go in web development. However, the
+problem we have with them is that we need the structure of our
+database to be well thought to be able to use them to their full
+potential.

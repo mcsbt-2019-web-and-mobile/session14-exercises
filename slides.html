@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>session 14</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/reveal.css">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/theme/beige.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/print/pdf.css' : 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">session 14</h1>
+</section>
+
+<section id="section" class="level1">
+<h1></h1>
+<section id="software-development-for-web-and-mobile.-session-14" class="level2">
+<h2>Software development for web and mobile. Session 14</h2>
+</section>
+</section>
+<section id="section-1" class="level1">
+<h1></h1>
+<section id="plan-for-today" class="level2">
+<h2>Plan for today</h2>
+<ul>
+<li>Using databases in Python</li>
+</ul>
+</section>
+</section>
+<section id="section-2" class="level1">
+<h1></h1>
+<section id="sqlite" class="level2">
+<h2>sqlite</h2>
+<p>Today we’ll be usign SQLite database engine. SQLite comes handy because we don’t need to have a database service running, it’s just a file in our computer that contains all the data.</p>
+<p><a href="https://sqlite.org/index.html">https://sqlite.org/index.html</a></p>
+</section>
+<section id="flask-sqlalchemy" class="level2">
+<h2>flask-sqlalchemy</h2>
+<p>The library that we’ll be using to communicate with sqlalchemy from python is called sqlalchemy and, although it comes installed with Anaconda, we will use the flask bindings. You can install them with:</p>
+<p><code>pip install flask-sqlalchemy</code> or <code>conda install flask-sqlalchemy</code></p>
+</section>
+</section>
+<section id="section-3" class="level1">
+<h1></h1>
+<section id="db-structure" class="level2">
+<h2>DB structure</h2>
+<p>Today we’ll use a blog as the application for all our examples. We will have three tables in the blog:</p>
+</section>
+<section id="users" class="level2">
+<h2>Users</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">CREATE</span> <span class="kw">TABLE</span> <span class="kw">IF</span> <span class="kw">NOT</span> <span class="kw">EXISTS</span> users (</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">  <span class="kw">id</span> <span class="dt">INTEGER</span> <span class="kw">PRIMARY</span> <span class="kw">KEY</span> AUTOINCREMENT,</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">  name <span class="dt">VARCHAR</span>(<span class="dv">255</span>) <span class="kw">NOT</span> <span class="kw">NULL</span>,</a>
+<a class="sourceLine" id="cb1-4" data-line-number="4">  <span class="kw">password</span> <span class="dt">VARCHAR</span>(<span class="dv">255</span>) <span class="kw">NOT</span> <span class="kw">NULL</span>,</a>
+<a class="sourceLine" id="cb1-5" data-line-number="5">  email <span class="dt">VARCHAR</span>(<span class="dv">255</span>) <span class="kw">NOT</span> <span class="kw">NULL</span></a>
+<a class="sourceLine" id="cb1-6" data-line-number="6">);</a></code></pre></div>
+</section>
+<section id="posts" class="level2">
+<h2>posts</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">CREATE</span> <span class="kw">TABLE</span> <span class="kw">IF</span> <span class="kw">NOT</span> <span class="kw">EXISTS</span> posts (</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2">  <span class="kw">id</span> <span class="dt">INTEGER</span> <span class="kw">PRIMARY</span> <span class="kw">KEY</span> AUTOINCREMENT,</a>
+<a class="sourceLine" id="cb2-3" data-line-number="3">  title <span class="dt">VARCHAR</span>(<span class="dv">255</span>) <span class="kw">NOT</span> <span class="kw">NULL</span>,</a>
+<a class="sourceLine" id="cb2-4" data-line-number="4">  content <span class="dt">VARCHAR</span>(<span class="dv">512</span>) <span class="kw">NOT</span> <span class="kw">NULL</span>,</a>
+<a class="sourceLine" id="cb2-5" data-line-number="5">  id_USER <span class="dt">INTEGER</span> <span class="kw">NOT</span> <span class="kw">NULL</span>,</a>
+<a class="sourceLine" id="cb2-6" data-line-number="6">  <span class="kw">FOREIGN</span> <span class="kw">KEY</span>(id_user) <span class="kw">REFERENCES</span> users(<span class="kw">id</span>)</a>
+<a class="sourceLine" id="cb2-7" data-line-number="7">);</a></code></pre></div>
+</section>
+<section id="comments" class="level2">
+<h2>comments</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">CREATE</span> <span class="kw">TABLE</span> <span class="kw">IF</span> <span class="kw">NOT</span> <span class="kw">EXISTS</span> comments (</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2">  <span class="kw">id</span> <span class="dt">INTEGER</span> <span class="kw">PRIMARY</span> <span class="kw">KEY</span> AUTOINCREMENT,</a>
+<a class="sourceLine" id="cb3-3" data-line-number="3">  content <span class="dt">VARCHAR</span>(<span class="dv">255</span>) <span class="kw">NOT</span> <span class="kw">NULL</span>,</a>
+<a class="sourceLine" id="cb3-4" data-line-number="4">  <span class="fu">user</span> <span class="dt">VARCHAR</span>(<span class="dv">100</span>) <span class="kw">NOT</span> <span class="kw">NULL</span>,</a>
+<a class="sourceLine" id="cb3-5" data-line-number="5">  id_post <span class="dt">INTEGER</span>,</a>
+<a class="sourceLine" id="cb3-6" data-line-number="6">  <span class="kw">FOREIGN</span> <span class="kw">KEY</span>(id_post) <span class="kw">REFERENCES</span> posts(<span class="kw">id</span>)</a>
+<a class="sourceLine" id="cb3-7" data-line-number="7">);</a></code></pre></div>
+</section>
+</section>
+<section id="section-4" class="level1">
+<h1></h1>
+<section id="connecting-to-the-database" class="level2">
+<h2>Connecting to the database</h2>
+<p>Using SQLAlchemy, connecting to the database is fairly easy. We just need to provide the database uri like this:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb4-1" data-line-number="1">app.config[<span class="st">&#39;SQLALCHEMY_DATABASE_URI&#39;</span>] <span class="op">=</span> <span class="st">&#39;sqlite:///blog.db&#39;</span></a></code></pre></div>
+</section>
+<section id="section-5" class="level2">
+<h2></h2>
+<p>if we were not using sqlite but postgres, for example, we could connect with:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb5-1" data-line-number="1">app.config[<span class="st">&#39;SQLALCHEMY_DATABASE_URI&#39;</span>] <span class="op">=</span> <span class="st">&#39;postgresql://user:secret@localhost&#39;</span></a></code></pre></div>
+</section>
+</section>
+<section id="section-6" class="level1">
+<h1></h1>
+<section id="reading-data-from-the-database" class="level2">
+<h2>Reading data from the database</h2>
+<p>Using the <code>db</code> object, we can make queries to the database:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb6-1" data-line-number="1">result <span class="op">=</span> db.engine.execute(query)</a></code></pre></div>
+</section>
+<section id="example-1" class="level2">
+<h2>Example 1</h2>
+<p>See <code>example1</code> folder.</p>
+</section>
+<section id="exercise-time" class="level2">
+<h2>Exercise time</h2>
+<p>Let’s modify the example 1 to make it possible to see detailed blog posts. In the detailed view, one should be able to see the post title, who wrote it, and the contents.</p>
+</section>
+</section>
+<section id="section-7" class="level1">
+<h1></h1>
+<section id="modifying-data-in-the-database" class="level2">
+<h2>Modifying data in the Database</h2>
+<p>So far we’ve only read data from the DB. Let’s see how we would modify data in the database.</p>
+</section>
+<section id="example-2" class="level2">
+<h2>Example 2</h2>
+<p>see <code>example2</code> folder.</p>
+</section>
+<section id="exercise" class="level2">
+<h2>exercise</h2>
+<p>make it possible to add comments to the posts in the blog. Comments will require your name and some content.</p>
+</section>
+</section>
+<section id="section-8" class="level1">
+<h1></h1>
+<section id="security-sql-injection" class="level2">
+<h2>Security: SQL Injection</h2>
+<p>Does anybody know what’s SQL injection?</p>
+</section>
+<section id="the-problem" class="level2">
+<h2>The problem</h2>
+<p>If we dont <em>sanitize</em> user input, it may go directly to our database, meaning that we may be giving direct access to our data through our forms.</p>
+</section>
+<section id="example-problem" class="level2">
+<h2>Example problem</h2>
+<p>in the example of adding a post, we could add the following as <em>post content</em>:</p>
+<pre><code>&#39;,1) union select * from users; --</code></pre>
+</section>
+<section id="explaination" class="level2">
+<h2>Explaination</h2>
+<p>in the beginning of the previous example we’re finishing the current SQL statement, and then adding more parts to the query.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw">INSERT</span> <span class="kw">INTO</span> posts (title, content, id_user)</a>
+<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="kw">VALUES</span> (<span class="st">&#39;a&#39;</span>, <span class="st">&#39;&#39;</span>, <span class="dv">1</span>) <span class="kw">union</span> <span class="kw">select</span> <span class="fu">user</span>, <span class="kw">password</span> <span class="kw">from</span> users; <span class="co">--</span></a></code></pre></div>
+</section>
+<section id="the-solution-prepared-statements" class="level2">
+<h2>the solution, prepared statements</h2>
+<p>prepared statements, the db library detects when the query is being hijacked and stops it from being run in the database directly. They’re really simple to use, we just need to parametrise our queries with <code>:keywords</code>, that we can substitute later.</p>
+</section>
+<section id="section-9" class="level2">
+<h2></h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="kw">query</span> = <span class="ot">&quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb9-2" data-line-number="2">    <span class="kw">SELECT</span> p.title, p.content, u.name </a>
+<a class="sourceLine" id="cb9-3" data-line-number="3">    <span class="kw">FROM</span> posts p</a>
+<a class="sourceLine" id="cb9-4" data-line-number="4">    <span class="kw">INNER</span> <span class="kw">JOIN</span> users u</a>
+<a class="sourceLine" id="cb9-5" data-line-number="5">    <span class="kw">ON</span> u.id = p.id_user</a>
+<a class="sourceLine" id="cb9-6" data-line-number="6">    <span class="kw">WHERE</span> p.id = <span class="ch">:id</span></a>
+<a class="sourceLine" id="cb9-7" data-line-number="7">    <span class="ot">&quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb9-8" data-line-number="8">    </a>
+<a class="sourceLine" id="cb9-9" data-line-number="9">db.engine.execute(<span class="kw">query</span>, id=post_id)</a></code></pre></div>
+</section>
+</section>
+<section id="section-10" class="level1">
+<h1></h1>
+<section id="orms" class="level2">
+<h2>ORMs</h2>
+<p>ORMs, or object-relational-mappers are an easier and more modern way of using databases. SQLAlchemy is an ORM, apart from a library for accessing SQL databases from python.</p>
+<p>What we do in ORMs is map the entities (tables) in our DB to classes (<strong>models</strong>) in our application.</p>
+</section>
+<section id="models" class="level2">
+<h2>models</h2>
+<p>We create models as simple python classes, that extend from <code>db.Model</code>.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="kw">class</span> User(db.Model):</a>
+<a class="sourceLine" id="cb10-2" data-line-number="2">    <span class="bu">id</span> <span class="op">=</span> db.Column(db.Integer, primary_key<span class="op">=</span><span class="va">True</span>)</a>
+<a class="sourceLine" id="cb10-3" data-line-number="3">    username <span class="op">=</span> db.Column(db.String(<span class="dv">80</span>), unique<span class="op">=</span><span class="va">True</span>, nullable<span class="op">=</span><span class="va">False</span>)</a>
+<a class="sourceLine" id="cb10-4" data-line-number="4">    email <span class="op">=</span> db.Column(db.String(<span class="dv">120</span>), unique<span class="op">=</span><span class="va">True</span>, nullable<span class="op">=</span><span class="va">False</span>)</a>
+<a class="sourceLine" id="cb10-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb10-6" data-line-number="6">    <span class="kw">def</span> <span class="fu">__repr__</span>(<span class="va">self</span>):</a>
+<a class="sourceLine" id="cb10-7" data-line-number="7">        <span class="cf">return</span> <span class="st">&#39;&lt;User </span><span class="sc">%r</span><span class="st">&gt;&#39;</span> <span class="op">%</span> <span class="va">self</span>.username</a></code></pre></div>
+</section>
+<section id="example-3" class="level2">
+<h2>Example 3</h2>
+<p>see <code>example3</code> folder</p>
+</section>
+<section id="recap" class="level2">
+<h2>Recap</h2>
+<p><strong>ORMs</strong> are normally the way to go in web development. However, the problem we have with them is that we need the structure of our database to be well thought to be able to use them to their full potential.</p>
+</section>
+</section>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/lib/js/head.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        // Transition style
+        transition: 'linear', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/plugin/zoom-js/zoom.js', async: true },
+          { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
