@@ -16,11 +16,11 @@ title: session 14
 
 ## sqlite
 
-Today we'll be usign SQLite database engine.  SQLite is cool because
-we don't need to have a database service running, it's just a file in
-our commputer that contains all the data.
+Today we'll be usign SQLite database engine.  SQLite comes handy
+because we don't need to have a database service running, it's just a
+file in our computer that contains all the data.
 
-https://sqlite.org/index.html
+[https://sqlite.org/index.html](https://sqlite.org/index.html)
 
 ## flask-sqlalchemy
 
@@ -112,10 +112,72 @@ Let's modify the example 1 to make it possible to see detailed blog
 posts.  In the detailed view, one should be able to see the post
 title, who wrote it, and the contents.
 
-# 
+#
 
-## Security: SQL Injection
+## Modifying data in the Database
+
+So far we've only read data from the DB.  Let's see how we would
+modify data in the database.
+
+## Example 2
+
+see `example2` folder.
+
+## exercise
+
+make it possible to add comments to the posts in the blog.  Comments
+will require your name and some content.
 
 #
 
-## Configuring the database with Flask
+## Security: SQL Injection
+
+Does anybody know what's SQL injection?
+
+## The problem
+
+If we dont _sanitize_ user input, it may go directly to our database,
+meaning that we may be giving direct access to our data through our
+forms.
+
+## Example problem
+
+in the example of adding a post, we could add the following as *post content*:
+ 
+```
+',1) union select * from users; --
+```
+
+## Explaination
+
+in the beginning of the previous example we're finishing the current
+SQL statement, and then adding more parts to the query.
+
+``` sql
+INSERT INTO posts (title, content, id_user)
+VALUES ('a', '', 1) union select user, password from users; --
+```
+
+## the solution, prepared statements
+
+prepared statements, the db library detects when the query is being
+hijacked and stops it from being run in the database directly.
+They're really simple to use, we just need to parametrise our queries
+with `:keywords`, that we can substitute later.
+
+##
+
+``` sql
+query = """
+    SELECT p.title, p.content, u.name 
+    FROM posts p
+    INNER JOIN users u
+    ON u.id = p.id_user
+    WHERE p.id = :id
+    """
+	
+db.engine.execute(query, id=post_id)
+```
+
+#
+
